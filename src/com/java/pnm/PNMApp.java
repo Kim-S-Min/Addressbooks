@@ -40,7 +40,7 @@ public class PNMApp {
 				
 				
 			case 3: //	삭제
-			//	md.deleteList();
+				md.deleteList();
 				break;
 				
 				

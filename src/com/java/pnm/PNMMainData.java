@@ -38,6 +38,8 @@ public class PNMMainData {
 			System.out.println();
 			System.out.println("<1.리스트>");
 			
+			//	명단이 나올때 줄번호가 같이 출력해되야한다
+			//	줄번호만 출력이 가능하다면 명단 삭제까지 한번에 완료가 된다
 			while((data = reader.read()) != -1) {
 				System.out.print((char)data);	
 			}
@@ -84,16 +86,64 @@ public class PNMMainData {
 			} catch (Exception e) {
 				
 			}
+		System.out.println("[명단이 추가되었습니다]");
 		}
 		
 		
 	}
 	//	명단삭제
-/*	public void deleteList() {
+	public void deleteList() {
+		Reader reader = null;
+		Writer writer = null;
+		BufferedReader br = null;
+		BufferedWriter bw = null;
+		
+		System.out.print("> 번호: ");
+		int tn = keyboard.nextInt();	//	줄번호를 인지할 수 있는 명령어를 사용해야 한다
+		
+		
+		/*
+		try {	//	이렇게 출력을하게되면 줄번호가 달라도 행안에 입력된 번호가 있으면 같이 삭제된다
+		reader = new FileReader(filename);
+		writer = new FileWriter(target);
+		br = new BufferedReader(reader);
+		bw = new BufferedWriter(writer);
+		String line = null;
 	
-		  
-		  
-	}	*/
+		
+
+		while((line = tn.readLine()) != null) {
+			if (line.toLowerCase().contains(tn)) {
+				line.remove(tn);
+				System.out.println("[삭제되었습니다]");
+				bw.write(line);	
+				bw.newLine();	
+			}
+		}
+		} catch (FileNotFoundException e) {
+			System.err.println("잘못입력하셨습니다");
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				br.close();
+				bw.close();
+			} catch (Exception e) {
+			
+			}
+		}
+		//	if () {
+		//	1 ~ 저장된 번호를 제외한 다른 번호를 입력시
+		//	- "잘못 입력하셨습니다" 출력
+		//	} else { 
+		//	1 ~ 저장된 번호를 입력시
+		//	해당 번호의 행 데이터를 전부 조회 및 삭제
+		//	System.out.println("[삭제되었습니다]");
+		//	}
+		*/
+		
+		
+	}	
 	//	명단검색
 	public void searchList() {
 		Reader reader = null;
@@ -120,7 +170,7 @@ public class PNMMainData {
 				}
 			}
 		} catch (FileNotFoundException e) {
-			System.err.println("파일을 찾지 못했습니다...");
+			System.err.println("잘못 입력하셨습니다");
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
