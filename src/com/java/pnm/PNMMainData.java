@@ -16,19 +16,17 @@ public class PNMMainData {
 	static final String filename = rootPath + "PhoneNumberManagement.txt";
 	static final String target = rootPath + "PhoneNumberManagementfiltered.txt";
 	
-	
 	PNMData[]  phoneBook;
 	private int count;
 	Scanner keyboard = new Scanner(System.in);
 	
-
 	public PNMMainData() {
 		phoneBook = new PNMData[1000];
 		count = 0;
 		
 		
 	}
-	//	명단보기
+	//	명단보기	//	명단보고 등록하고 명단보면 개행이 안되서 줄번호가 제대로 안들어감
 	public void viewList() {
 		Reader reader = null;
 		try {
@@ -38,14 +36,28 @@ public class PNMMainData {
 			System.out.println();
 			System.out.println("<1.리스트>");
 			
-			//	명단이 나올때 줄번호가 같이 출력해되야한다
-			//	줄번호만 출력이 가능하다면 명단 삭제까지 한번에 완료가 된다
-			while((data = reader.read()) != -1) {
-				System.out.print((char)data);	
+			FileReader fin = null;
+			try {
+				fin = new FileReader("C:\\Users\\wrt78\\eclipse-workspace\\Addressbooks\\file\\PhoneNumberManagement.txt");
+
+				int c;
+				int count = 1; 
+				while((c = fin.read()) != -1) { 
+					if(count == 1){ 
+						System.out.print(count++ + " ");
+						continue;
+					}
+					System.out.print((char)c); // 읽은 문자를 버퍼 출력 스트림에 쓴다. 근데 이해가 안된다
+					if(c == '\n') { 
+						System.out.print(count++ + " ");
+					}
+				}
+			} catch(IOException e) {
+				System.out.println("파일 입출력 오류");
 			}
-			System.out.println();
+			System.out.println("\n");
 		} catch (FileNotFoundException e) {
-			System.err.println("파일을 찾지 못했습니다...");
+			System.err.println("파일을 찾지 못했습니다");
 		} catch (IOException e) {
 		} finally {
 			try {
@@ -60,14 +72,12 @@ public class PNMMainData {
 	public void saveList() {
 		Writer writer = null;
 		
-		
 		System.out.print("> 이름: ");
 		String name = keyboard.nextLine();
 		System.out.print("> 휴대전화:");
 		String num = keyboard.nextLine();
 		System.out.print("> 집전화:");
 		String tel = keyboard.nextLine();
-
 		
 		try {
 			writer = new FileWriter(filename, true);	
@@ -75,8 +85,6 @@ public class PNMMainData {
 			writer.write(num + ",");
 			writer.write(tel + "\n");
 			
-			
-			//	내부 버퍼 비우기
 			writer.flush();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -99,10 +107,8 @@ public class PNMMainData {
 		BufferedWriter bw = null;
 		
 		System.out.print("> 번호: ");
-		int tn = keyboard.nextInt();	//	줄번호를 인지할 수 있는 명령어를 사용해야 한다
+		int cn = keyboard.nextInt();	//	줄번호를 인지할 수 있는 명령어를 사용해야 한다
 		
-		
-		/*
 		try {	//	이렇게 출력을하게되면 줄번호가 달라도 행안에 입력된 번호가 있으면 같이 삭제된다
 		reader = new FileReader(filename);
 		writer = new FileWriter(target);
@@ -110,11 +116,9 @@ public class PNMMainData {
 		bw = new BufferedWriter(writer);
 		String line = null;
 	
-		
-
-		while((line = tn.readLine()) != null) {
-			if (line.toLowerCase().contains(tn)) {
-				line.remove(tn);
+		while((line = br.readLine()) != null) {
+			if (line.toLowerCase().contains(cn)) {
+				cn.remove(line);
 				System.out.println("[삭제되었습니다]");
 				bw.write(line);	
 				bw.newLine();	
@@ -140,7 +144,6 @@ public class PNMMainData {
 		//	해당 번호의 행 데이터를 전부 조회 및 삭제
 		//	System.out.println("[삭제되었습니다]");
 		//	}
-		*/
 		
 		
 	}	
