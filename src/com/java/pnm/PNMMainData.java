@@ -32,7 +32,7 @@ public class PNMMainData {
 	public void viewList() {
 		Reader reader = null;
 		try {
-			reader = new FileReader(filename);
+			reader = new FileReader(filename);	
 			
 			int data = 0;
 			System.out.println();
@@ -94,24 +94,24 @@ public class PNMMainData {
 		  
 		  
 	}	*/
-/*	//	명단검색
+	//	명단검색
 	public void searchList() {
 		Reader reader = null;
 		Writer writer = null;
 		BufferedReader br = null;
 		BufferedWriter bw = null;
 		
-	
+		System.out.print("> 이름: ");
+		String kw = keyboard.nextLine();
 		try {
-		//	reader = new FileReader(source);
+			reader = new FileReader(filename);
 			writer = new FileWriter(target);
-			
 			br = new BufferedReader(reader);
 			bw = new BufferedWriter(writer);
 			String line = null;
+		
 			
-			System.out.print("> 이름: ");
-			String kw = keyboard.nextLine();
+
 			while((line = br.readLine()) != null) {
 				if (line.toLowerCase().contains(kw)) {
 					System.out.println(line);
@@ -131,6 +131,6 @@ public class PNMMainData {
 				
 			}
 		}
-	} */
+	} 
 	
 }

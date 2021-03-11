@@ -1,6 +1,9 @@
 package com.java.pnm;
 
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 public class PNMApp {
 	static final String rootPath = System.getProperty("user.dir") + "\\file\\";
@@ -13,6 +16,7 @@ public class PNMApp {
 		int balance = 0;
 		boolean run = true;
 		
+
 		while(run) {
 			System.out.println("====================================");
 			System.out.println("*         전화번호 관리 프로그램         *");	
@@ -41,7 +45,7 @@ public class PNMApp {
 				
 				
 			case 4: //	검색
-			//	md.searchList();
+				md.searchList();
 				break;
 				
 				
