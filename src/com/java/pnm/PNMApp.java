@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class PNMApp {
 	static final String rootPath = System.getProperty("user.dir") + "\\file\\";
 	static final String filename = rootPath + "PhoneNumberManagement.txt";
-	static final String target = rootPath + "PhoneNumberManagement.txt";
+	static final String target = rootPath + "PhoneNumberManagementfiltered.txt";
 	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
@@ -41,7 +41,7 @@ public class PNMApp {
 				
 				
 			case 4: //	검색
-				md.searchList();
+			//	md.searchList();
 				break;
 				
 				

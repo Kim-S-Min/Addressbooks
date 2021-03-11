@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class PNMMainData {
 	static final String rootPath = System.getProperty("user.dir") + "\\file\\";
 	static final String filename = rootPath + "PhoneNumberManagement.txt";
-	static final String target = rootPath + "PhoneNumberManagement.txt";
+	static final String target = rootPath + "PhoneNumberManagementfiltered.txt";
 	
 	
 	PNMData[]  phoneBook;
@@ -35,7 +35,6 @@ public class PNMMainData {
 			reader = new FileReader(filename);
 			
 			int data = 0;
-			int i = 0;
 			System.out.println();
 			System.out.println("<1.리스트>");
 			
@@ -58,17 +57,18 @@ public class PNMMainData {
 	//	명단추가
 	public void saveList() {
 		Writer writer = null;
-	
+		
+		
 		System.out.print("> 이름: ");
 		String name = keyboard.nextLine();
 		System.out.print("> 휴대전화:");
 		String num = keyboard.nextLine();
 		System.out.print("> 집전화:");
 		String tel = keyboard.nextLine();
-		phoneBook[count++] = new PNMData(name,num,tel);
+
 		
 		try {
-			writer = new BufferedWriter(new FileWriter("filename", true));	//	초기화되는것만 막으면 되는데
+			writer = new FileWriter(filename, true);	
 			writer.write(name + ",");
 			writer.write(num + ",");
 			writer.write(tel + "\n");
@@ -90,23 +90,11 @@ public class PNMMainData {
 	}
 	//	명단삭제
 /*	public void deleteList() {
-		  int index;
-		  System.out.print("> 이름 : ");
-		  String name = keyboard.nextLine();
-		  index = search(name);
-		  if(index<0)
-		   System.out.println("검색되지 않습니다");
-		  else{
-		   for(int i = index; i < count -1; i++) {
-		    phoneBook[i] = phoneBook[i + 1];    
-		   }
-		   count--;
-		   System.out.println("[삭제되었습니다]\n");
-		  }
+	
 		  
 		  
 	}	*/
-	//	명단검색
+/*	//	명단검색
 	public void searchList() {
 		Reader reader = null;
 		Writer writer = null;
@@ -127,8 +115,8 @@ public class PNMMainData {
 			while((line = br.readLine()) != null) {
 				if (line.toLowerCase().contains(kw)) {
 					System.out.println(line);
-					bw.write(line);		//	줄단위(한줄로) 출력
-					bw.newLine();	//	개행하여 출력
+					bw.write(line);	
+					bw.newLine();	
 				}
 			}
 		} catch (FileNotFoundException e) {
@@ -143,6 +131,6 @@ public class PNMMainData {
 				
 			}
 		}
-	}
+	} */
 	
 }
