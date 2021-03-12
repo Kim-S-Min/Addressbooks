@@ -17,7 +17,7 @@ public class PNMMainData {
 	static final String target = rootPath + "PhoneNumberManagementfiltered.txt";
 	Scanner keyboard = new Scanner(System.in);
 
-	//	명단보기	//	명단에 개행이 안되어 있는 상태로 등록을 한다면 개행이 되지 않고 연락처가 추가된다
+	//	명단보기
 	public void viewList() {
 		Reader reader = null;
 		try {
@@ -37,7 +37,7 @@ public class PNMMainData {
 						System.out.print(count++ + " ");
 						continue;
 					}
-					System.out.print((char)c); // 읽은 문자를 버퍼 출력 스트림에 쓴다. 근데 이해가 안된다
+					System.out.print((char)c); 
 					if(c == '\n') { 
 						System.out.print(count++ + " ");
 					}
@@ -91,7 +91,6 @@ public class PNMMainData {
 	}
 	//	명단삭제
 	public void deleteList() {
-		//	명단삭제
 		Reader reader = null;
 		Writer writer = null;
 		BufferedReader br = null;
@@ -112,6 +111,7 @@ public class PNMMainData {
 				counter++;
 				if (counter == cn) {
 					System.out.println(line);
+			//		Delete(line);
 					//	삭제하기 데이터 넣을 공간
 					System.out.println("[삭제가 완료되었습니다]");
 				} 
