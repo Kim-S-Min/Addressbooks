@@ -1,4 +1,4 @@
-package com.java.pnm;
+package com.java.addressbook;
 
 
 import java.io.BufferedReader;
@@ -11,7 +11,7 @@ import java.io.Reader;
 import java.io.Writer;
 import java.util.Scanner;
 
-public class PNMMainData {
+public class MainData {
 	static final String rootPath = System.getProperty("user.dir") + "\\file\\";
 	static final String filename = rootPath + "PhoneNumberManagement.txt";
 	static final String target = rootPath + "PhoneNumberManagementfiltered.txt";
@@ -111,8 +111,7 @@ public class PNMMainData {
 				counter++;
 				if (counter == cn) {
 					System.out.println(line);
-			//		Delete(line);
-					//	삭제하기 데이터 넣을 공간
+					//	삭제 메소드 
 					System.out.println("[삭제가 완료되었습니다]");
 				} 
 			}		

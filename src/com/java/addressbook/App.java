@@ -1,18 +1,18 @@
-package com.java.pnm;
+package com.java.addressbook;
 
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
-public class PNMApp {
+public class App {
 	static final String rootPath = System.getProperty("user.dir") + "\\file\\";
 	static final String filename = rootPath + "PhoneNumberManagement.txt";
 	static final String target = rootPath + "PhoneNumberManagementfiltered.txt";
 	
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		PNMMainData md = new PNMMainData();
+		MainData md = new MainData();
 		int balance = 0;
 		boolean run = true;
 		

@@ -1,12 +1,12 @@
-package com.java.pnm;
+package com.java.addressbook;
 
-public class PNMData {	
+public class Field {	
 	private String name;
 	private String num;
 	private String tel;
 
 	
-	public PNMData(String name, String num, String tel) {
+	public Field(String name, String num, String tel) {
 		this.name = name;
 		this.num = num;
 		this.tel = tel;
