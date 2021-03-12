@@ -1,10 +1,6 @@
 package com.java.pnm;
 
-public class PNMData {
-	static final String rootPath = System.getProperty("user.dir") + "\\file\\";
-	static final String filename = rootPath + "PhoneNumberManagement.txt";
-	static final String target = rootPath + "PhoneNumberManagementfiltered.txt";
-	
+public class PNMData {	
 	private String name;
 	private String num;
 	private String tel;
@@ -16,7 +12,6 @@ public class PNMData {
 		this.tel = tel;
 		
 		
-
 	}
 	public String getName() {
 		return name;

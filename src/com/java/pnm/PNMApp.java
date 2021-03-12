@@ -18,9 +18,9 @@ public class PNMApp {
 		
 
 		while(run) {
-			System.out.println("====================================");
-			System.out.println("*         전화번호 관리 프로그램         *");	
-			System.out.println("====================================");
+			System.out.println("======================================");
+			System.out.println("*          전화번호 관리 프로그램          *");	
+			System.out.println("======================================");
 			System.out.println("1. 명단 2. 등록 3. 삭제 4. 검색 5. 종료");	
 			System.out.println("--------------------------------------");
 			System.out.print("> 메뉴번호: ");
@@ -51,9 +51,9 @@ public class PNMApp {
 				
 			case 5:	//	종료
 				run = false;
-				System.out.println("**************************************");
+				System.out.println("--------------------------------------");
 				System.out.println("*      프로그램을 종료합니다 감사합니다      *");
-				System.out.println("**************************************");
+				System.out.println("--------------------------------------");
 				break;
 				
 				
